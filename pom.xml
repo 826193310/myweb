@@ -12,6 +12,7 @@
 	<artifactId>normalWeb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>normalWeb</name>
+	<packaging>war</packaging>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -32,6 +33,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>myweb</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
