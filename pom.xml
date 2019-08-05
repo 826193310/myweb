@@ -31,6 +31,16 @@
 			</exclusions>
 		</dependency>
 
+		<!--<dependency>
+			<groupId>org.csource</groupId>
+			<artifactId>fastdfs-client-java</artifactId>
+			<version>1.27</version>
+		</dependency>-->
+		<dependency>
+			<groupId>com.github.tobato</groupId>
+			<artifactId>fastdfs-client</artifactId>
+			<version>1.26.5</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -55,6 +65,7 @@
                 相当于compile，但是打包阶段做了exclude操作-->
 			<scope>provided</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
