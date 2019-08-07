@@ -9,6 +9,7 @@ import com.su.vo.TblFasfdfssaveInfo;
 import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -64,9 +65,8 @@ public class FastDfsController {
     *@return:
      *
     **/
-    @PostMapping("fast/delete/")
-    public String delete(@RequestParam("file") MultipartFile file) throws IOException {
-        //storageClient.deleteFile();
-        return null;
+    @PostMapping("fast/delete")
+    public Resp<Void> delete(String savepath) throws IOException {
+        return fastDfsInfoService.deleteBySavePath(savepath);
     }
 }
