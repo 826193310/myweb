@@ -10,3 +10,40 @@ fdfs:
     - 192.168.58.128:22122
   pool:
     jmx-enabled: false
+  stroageUrl: 192.168.58.130:8888
+
+mybatis:
+  mapper-locations: classpath*:com/su/dao/*Mapper.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring:
+  activiti:
+    check-process-definitions: false
+    databaseSchemaUpdate: false
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 500MB
+  aop:
+    proxy-target-class: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.58.128:3306/mytest?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 1234
+    driverClassName: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 10
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,wall,slf4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
